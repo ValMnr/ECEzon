@@ -30,6 +30,29 @@
     <?php endif; ?>
 
     <div class="container-fluid">
+      <nav class="navbar navbar-default rounded">
+          <a class="navbar-brand logo1" width="160px;" height="80px;" href="/../ECEzon/ECEzon"><img src="" alt="ECE Marketplace "
+                  class="logo1">
+          </a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+
+
+          <div class="navbar-collapse collapse  ">
+
+              <ul class="nav navbar-nav ml-auto navbar-right">
+                      <li class="nav-item"><a href="/../ECEzon/ECEzon/Produits/" class="to-violet to-bold3">Vos Articles</a></li>
+
+                      <li class="nav-item"><a href="/../ECEzon/ECEzon/Pages/account_vendor.html" class="to-violet  to-bold3">Votre Compte</a></li>
+              </ul>
+
+          </div>
+          <!--/.nav-collapse -->
+              </nav>
 
       <?php require_once 'Requete.php'; ?>
 

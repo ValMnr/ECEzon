@@ -26,8 +26,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand logo1" width="160px;" height="80px;" href="Logo"><img src="" alt="ECE Marketplace "
-                            class="logo1">
+                    <a class="" width="32px;" height="32px;" href="/../ECEzon/ECEzon"><img src="images/logo.png" width="100px;" height="80px;"alt="ECE Marketplace "
+                            class="">
                     </a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
