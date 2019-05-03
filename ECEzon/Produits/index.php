@@ -82,11 +82,13 @@
 
                     </div>
                 </div>
+                <?php
+                while ($data = mysqli_fetch_assoc($result)):
+                  ?>
                 <div class="row">
-                  <?php
-                  while ($data = mysqli_fetch_assoc($result)):
-                    ?>
+
                     <div class="col-lg-9 content ">
+
                         <h1>Produit n° <?php echo $data['ID'];?></h1>
                         <h4>Mis en ligne le 02/02/2019</h4>
                         <div class="trait"></div>
@@ -95,7 +97,7 @@
                               <?php
                               $imageData = base64_encode(file_get_contents($data['Photo']));
                               ?>
-                              <?php echo '<img src="data:image/jpeg;base64,'.$imageData.'">';?> </div>
+                              <?php echo '<img class="img-responsive" src="data:image/jpeg;base64,'.$imageData.'">';?> </div>
                             <div class="col-md-8">
                                 <div class="row info-produit">
 
@@ -110,20 +112,19 @@
                                     <div class="content-left">
                                         Quantité stockée: <span style="font-weight:900;"><?php echo $data['Quantite'];?></span> unités
                                     </div>
+                                    <br>
                                     <div class="content-left">
                                         Prix : <span style="font-weight:900;"><?php echo $data['Prix'];?></span> €
                                     </div>
                                     <div class="content-right ">
-                                        <button href="items.php?edit= <?php echo $data['ID'];?>" class="btn btn-warning btn-md btn-cst-c1">Modifier</button>
-                                    </div>
+                                        <a href="items.php?edit= <?php echo $data['ID'];?>" class="btn btn-warning btn-md btn-cst-c1">Modifier</a>                                    </div>
 
                                 </div>
                                 <br> <br> <br>
                                 <div class=" produit-dlt content-right">
-                                            <button class="btn btn-danger btn-md" href="process.php?delete= <?php echo $data['ID'];?>">Supprimer l'article </button>
+                                            <a href="process.php?delete= <?php echo $data['ID'];?>" class="btn btn-danger btn-md">Supprimer l'article</a>
 
                                 </div>
-                                <?php endwhile; ?>
 
                             </div>
 
@@ -131,6 +132,7 @@
                     </div>
 
                 </div>
+              <?php endwhile; ?>
 
 
 

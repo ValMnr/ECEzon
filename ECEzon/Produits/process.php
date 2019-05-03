@@ -81,7 +81,8 @@ if (isset($_POST['add'])) {
     }
     $_SESSION['message'] = 'Article has been added';
     $_SESSION['msg_type'] = 'success';
-    header("location: items.php");
+    header("location: index.php");
+    exit();
 } // fin if button
 
 
@@ -92,7 +93,8 @@ if (isset($_GET['delete'])) {
   $_SESSION['message'] = 'Record has been deleted';
   $_SESSION['msg_type'] = 'danger';
 
-  header("location: Affichage.php");
+  header("location: index.php");
+  exit();
 }
 
 if (isset($_GET['edit'])) {
@@ -138,7 +140,7 @@ if (isset($_POST['update'])) {
     if ($conn->query($produit) === TRUE) {
       $_SESSION['message'] = 'Article has been updated';
       $_SESSION['msg_type'] = 'warning';
-      header("location: items.php");
+      header("location: index.php?article=modified");
 
     } else {
       echo "Error: " . $produit . "<br>" . $conn->error;
