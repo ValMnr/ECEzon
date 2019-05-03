@@ -84,7 +84,6 @@ $result = $conn->query("SELECT * FROM Products") or die(mysqli_error($conn));
             <td>
               <a href="items.php?edit= <?php echo $data['ID'];?>" class="btn btn-info">Edit</a>
               <a href="process.php?delete= <?php echo $data['ID'];?>" class="btn btn-danger">Delete</a>
-
             </td>
           </tr>
         <?php endwhile; ?>
