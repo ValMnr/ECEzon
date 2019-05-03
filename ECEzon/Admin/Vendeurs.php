@@ -1,7 +1,33 @@
+<?php
+
+
+// Create connection
+$conn = mysqli_connect("mysql", "root", "tiger", 'Marketplace');
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$name = "";
+$photo = "";
+$description = "";
+$categorie = "";
+$quantite = 0;
+$prix = 0;
+$idvendor = "";
+$video = "";
+$taille = 0.0;
+$genre = "";
+$couleur = "";
+
+ ?>
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Add Product</title>
+    <title>Items.php</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,31 +37,45 @@
   </head>
   <body>
 
+    <!-- <?php require_once 'process.php'; ?> -->
+
     <div class="container">
+
+      <!-- Message d'alerte -->
+     <?php
+     if (isset($_SESSION['message'])):
+      ?>
+      <div class="alert alert-<?=$_SESSION['msg_type']?>">
+        <?php
+        echo $_SESSION['message'];
+        unset($_SESSION['message']);
+         ?>
+       </div>
+     <?php endif; ?>
       <h4 class="row justify-content-center">Adding product to the db</h4>
       <div class="row justify-content-center">
-        <form action="product.php" method="post" enctype="multipart/form-data">
-
+        <form action="process.php" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="id" value="<?php echo $id; ?>">
           <table class="table">
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Photo</th>
+                <th>Pseudo</th>
                 <th>Description</th>
                 <th>Catégorie</th>
-                <th>Quanité</th>
+                <th>Quantité</th>
                 <th>Id Vendeur</th>
                 <th>Prix</th>
               </tr>
             </thead>
             <tr>
-              <td><input type="text" name="Name" placeholder="Enter the article name" class="form-control"></td>
-              <td><input type="file" name="Photo" class="form-input"></td>
-              <td><input type="text" name="Caption" class="form-control"></td>
-              <td><input type="text" name="Categorie" class="form-control"></td>
-              <td><input type="number" name="Quantity" class="form-control" value="1"></td>
-              <td><input type="number" name="Id_saler" class="form-control" value="0"></td>
-              <td><input type="number" name="Price" class="form-control" value="0"></td>
+              <td><input type="text" name="Name" value="<?php echo $name ?>" class="form-control"></td>
+              <td><input type="file" name="Photo" value="<?php echo $photo ?>" class="form-input"></td>
+              <td><input type="text" name="Caption" value="<?php echo $description ?>" class="form-control"></td>
+              <td><input type="text" name="Categorie" value="<?php echo $categorie ?>" class="form-control"></td>
+              <td><input type="number" name="Quantity" value="<?php echo $quantite ?>" class="form-control" value="1"></td>
+              <td><input type="number" name="Id_saler" value="<?php echo $idvendor ?>" class="form-control" value="0"></td>
+              <td><input type="number" name="Price"  value="<?php echo $prix ?>" class="form-control" value="0"></td>
             </tr>
           </table>
           <table class="table">
@@ -66,7 +106,12 @@
 
           </table>
           <div class="row justify-content-center">
-            <input type="submit" class="btn btn-primary"name="add" value="Add">
+            <!-- <input type="submit" class="btn btn-primary"name="add" value="Add"> -->
+          <?php if ($update == true ): ?>
+              <input type="submit" class="btn btn-info"name="update" value="Update">
+              <?php else: ?>
+              <input type="submit" class="btn btn-primary"name="add" value="Add">
+          <?php endif; ?>
           </div>
       </form>
       </div>

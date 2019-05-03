@@ -1,21 +1,13 @@
-<!-- Openning the connection with the db -->
 <?php
 
-// Create connection
-$conn = mysqli_connect("mysql", "root", "tiger", 'Marketplace');
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$result = $conn->query("SELECT * FROM Products") or die(mysqli_error($conn));
+require_once 'Requete.php';
  ?>
 
 
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Affichage Db</title>
+    <title>Affichage de la base de Donnée de vendeurs</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -50,19 +42,15 @@ $result = $conn->query("SELECT * FROM Products") or die(mysqli_error($conn));
 
 
 
-    <h4> Display entry from database </h4>
+    <h4> Display Vendors from database </h4>
     <div class="row justify-content-center">
       <table class="table">
         <thead>
           <tr>
             <th>ID</th>
-            <th>Name</th>
+            <th>Email</th>
+            <th>Pseudo</th>
             <th>Photo</th>
-            <th>Description</th>
-            <th>Catégorie</th>
-            <th>Quantité</th>
-            <th>Id Vendeur</th>
-            <th>Prix</th>
           </tr>
         </thead>
         <?php
@@ -70,19 +58,15 @@ $result = $conn->query("SELECT * FROM Products") or die(mysqli_error($conn));
           ?>
           <tr>
             <td><?php echo $data['ID'];?></td>
-            <td><?php echo $data['Nom'];?></td>
+            <td><?php echo $data['Email'];?></td>
+            <td><?php echo $data['Pseudo'];?></td>
             <?php
-            $imageData = base64_encode(file_get_contents($data['Photo']));
+            $imageData = base64_encode(file_get_contents($data['Profile']));
             ?>
             <td><?php echo '<img src="data:image/jpeg;base64,'.$imageData.'">';?></td>
-            <td><?php echo $data['Description'];?></td>
-            <td><?php echo $data['Categorie'];?></td>
-            <td><?php echo $data['Quantite'];?></td>
-            <td><?php echo $data['ID_Vendeur'];?></td>
-            <td><?php echo $data['Prix'];?></td>
             <!-- edit delete button -->
             <td>
-              <a href="items.php?edit= <?php echo $data['ID'];?>" class="btn btn-info">Edit</a>
+              <a href="../Comptes/CreationCompteVendeur.php?edit= <?php echo $data['ID'];?>" class="btn btn-info">Edit</a>
               <a href="process.php?delete= <?php echo $data['ID'];?>" class="btn btn-danger">Delete</a>
             </td>
           </tr>
@@ -94,7 +78,7 @@ $result = $conn->query("SELECT * FROM Products") or die(mysqli_error($conn));
 
       <form method="post">
         <div class="form-group">
-          <input type="submit" name="display" value="display">
+          <a href="../Comptes/CreationCompteVendeur.php" class="btn btn-success">Add</a>
           <!-- <input type="button" name="display" value="display"> -->
 
         </div>

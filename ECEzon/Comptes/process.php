@@ -231,7 +231,64 @@ else {
   exit();
 }
 
+if (isset($_GET['edit'])) {
+  header("Location: CreationCompteVendeur.php?pseudo=".$pseudo."&email=".$email);
+  exit();
+  $id = $_GET['edit'];
 
+  $sql = "SELECT * FROM Vendeurs WHERE ID=?;";
+  $stmt = mysqli_stmt_init($conn);
+  if (!mysqli_stmt_prepare($stmt,$sql)) {
+    header("Location: index.php?error=SQLError");
+    exit();
+  }
+  else {
+
+    // send to db with user info
+    mysqli_stmt_bind_param($stmt,"s",$id);
+    mysqli_stmt_execute($stmt);
+    if ($row = mysqli_fetch_assoc($result)) {
+      $pseudo = $row['Pseudo'];
+      $email = $row['Email'];
+      $update = true;
+    }
+    }
+  }
+
+  header("location : CreationCompteVendeur.php");
+  exit();
+}
+if (isset($_POST['signup-vendeur']) && $update == true;) {
+    // code...
+    require 'db.inc.php';
+    $id = $_POST['id'];
+    $pseudo = $_POST['uid'];
+    $mail = $_POST['mail'];
+
+    // error checking
+    if (empty($pseudo) || empty($mail)) {
+      header("Location: index.php?error=emptyfields");
+      exit();
+    } else {
+      // Checking for existing account
+      // USING placeholder ? to avoid SQLInjection
+
+      $profile = ImageUpload('profilepic');
+      $cover = ImageUpload('coverpic');
+
+      $sql = "UPDATE Vendeurs SET  Email=?, Pseudo=?,Profile=?,Couverture=? WHERE ID=?";
+      $stmt = mysqli_stmt_init($conn);
+      if (!mysqli_stmt_prepare($stmt,$sql)) {
+        header("Location: index.php?error=SQLError");
+        exit();
+      } else {
+        mysqli_stmt_bind_param($stmt,"ssssi",$mail,$pseudo,$profile,$cover,$id);
+        mysqli_stmt_execute($stmt);
+        header("Location: ../Admin/");
+        exit();
+      }
+    } // fin if button
+  }
 // check for image update
 function ImageUpload($pic)
 {

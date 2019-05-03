@@ -25,9 +25,9 @@ $email ="";
       <div class="row justify-content-center">
         <form class="" action="process.php" method="post" enctype="multipart/form-data">
           <h4>Finalisation Inscription Compte Vendeur</h4>
-          <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
-          <input type="text" name="uid" placeholder="Pseudo" value="" class="form-control">
-          <input type="text" name="mail" placeholder="Email" value="<?php echo $_GET['email']?>" class="form-control">
+          <input type="hidden" name="id" value="<?php echo $_GET['ID'] ?>">
+          <input type="text" name="uid" placeholder="Pseudo" value="<?php $pseudo?>" class="form-control">
+          <input type="text" name="mail" placeholder="Email" value="<?php $email?>" class="form-control">
           <input type="file" name="profilepic" class="form-input">
           <input type="file" name="coverpic" class="form-input">
           <input type="submit" name="signup-vendeur" class="btn btn-primary">
