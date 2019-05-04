@@ -403,6 +403,8 @@ body {
   border: none;
   height: inherit;
   margin-left: 20px;
+  height: 120px;
+  width: 100px;
 }
 
 .to-violet {

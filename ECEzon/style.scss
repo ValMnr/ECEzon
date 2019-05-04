@@ -17,19 +17,19 @@ a{
 .navbar {
     min-height: 90px;
   }
-  
+
   .navbar-brand {
     padding: 0 15px;
     height: 90px;
     line-height: 90px;
   }
-  
+
   .navbar-toggle {
     /* (80px - button height 34px) / 2 = 23px */
     margin-top: 25px;
     padding: 9px 10px !important;
   }
-  
+
   @media (min-width: 768px) {
     .navbar-nav > li > a {
       /* (80px - line-height of 27px) / 2 = 26.5px */
@@ -69,7 +69,7 @@ Buttons
     padding: 10px 10px;
     border-radius: 5px;
     position: relative;
-  
+
     &::after {
       content: '';
       position: absolute;
@@ -82,43 +82,43 @@ Buttons
       box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0), 0 3px 3px hsla(0, 0, 0, .2);
       border-radius: 5px;
     }
-  
+
     &:hover::after {
       background: hsla(0, 0, 0, 0.1);
       box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0.2);
     }
-  
+
   }
-  
+
   /*--------------------
   Form
   --------------------*/
   .form {
-  
+
     fieldset {
       border: none;
       padding: 0;
       padding: 10px 0;
       position: relative;
       clear: both;
-  
+
       &.fieldset-expiration {
         float: left;
         width: 60%;
-  
+
         & .select {
           width: 84px;
           margin-right: 12px;
           float: left;
         }
       }
-  
+
       &.fieldset-ccv {
         clear: none;
         float: right;
         width: 86px;
       }
-  
+
       label {
         display: block;
         text-transform: uppercase;
@@ -128,7 +128,7 @@ Buttons
         font-weight: bold;
         font-family: Inconsolata;
       }
-  
+
       input,
       .select {
         width: 100%;
@@ -140,21 +140,21 @@ Buttons
         outline: none!important;
         border: 1px solid hsla(0, 0, 0, 0.3);
         box-shadow: inset 0 1px 4px hsla(0, 0, 0, 0.2);
-  
+
         &.input-cart-number {
           width: 82px;
           display: inline-block;
           margin-right: 8px;
-  
+
           &:last-child {
             margin-right: 0;
           }
         }
       }
-  
+
       .select {
         position: relative;
-  
+
         &::after {
           content: '';
           border-top: 8px solid #222;
@@ -166,7 +166,7 @@ Buttons
           right: 10px;
           pointer-events: none;
         }
-  
+
         select {
           appearance: none;
           position: absolute;
@@ -177,18 +177,18 @@ Buttons
           top: 6px;
           left: 6px;
           background: none;
-  
+
           :-moz-focusring {
             color: transparent;
             text-shadow: 0 0 0 #000;
           }
-  
+
         }
       }
-  
-  
+
+
     }
-  
+
     button {
       width: 100%;
       outline: none!important;
@@ -199,14 +199,14 @@ Buttons
       box-shadow: none;
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
       margin-top: 90px;
-  
+
       & .fa {
         margin-right: 6px;
       }
     }
-  
+
   }
-  
+
   /*--------------------
   Checkout
   --------------------*/
@@ -219,7 +219,7 @@ Buttons
     padding: 160px 45px 30px;
     box-shadow: 0 10px 40px hsla(0, 0, 0, .1);
   }
-  
+
   /*--------------------
   Credit Card
   --------------------*/
@@ -231,12 +231,12 @@ Buttons
     left: 200px;
 
     transform: translateX(-50%);
-  
+
     &:hover .flip,
     &.hover .flip {
       transform: rotateY(180deg);
     }
-  
+
     .front,
     .back {
       width: 400px;
@@ -251,7 +251,7 @@ Buttons
       left: 0;
       text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
       box-shadow: 0 1px 6px hsla(0, 0, 0, 0.3);
-  
+
       &::before {
         content: '';
         position: absolute;
@@ -264,40 +264,40 @@ Buttons
         opacity: .05;
       }
     }
-  
+
     .flip {
       transition: 0.6s;
       transform-style: preserve-3d;
       position: relative;
     }
-  
+
     .logo {
       position: absolute;
       top: 9px;
       right: 20px;
       width: 60px;
-  
+
       svg {
         width: 100%;
         height: auto;
         fill: #fff;
       }
     }
-  
+
     .front {
       z-index: 2;
       transform: rotateY(0deg);
     }
-  
+
     .back {
       transform: rotateY(180deg);
-  
+
       .logo {
         top: 185px;
       }
-  
+
     }
-  
+
     .chip {
       position: absolute;
       width: 60px;
@@ -306,7 +306,7 @@ Buttons
       left: 20px;
       background: linear-gradient(135deg, hsl(269,54%,87%) 0%,hsl(200,64%,89%) 44%,hsl(18,55%,94%) 100%);;
       border-radius: 8px;
-  
+
       &::before {
         content: '';
         position: absolute;
@@ -321,7 +321,7 @@ Buttons
         border-radius: 5px;
       }
     }
-  
+
     .strip {
       background: linear-gradient(135deg, hsl(0, 0, 25%), hsl(0, 0, 10%));
       position: absolute;
@@ -330,7 +330,7 @@ Buttons
       top: 30px;
       left: 0;
     }
-  
+
     .number {
       position: absolute;
       margin: 0 auto;
@@ -338,7 +338,7 @@ Buttons
       left: 19px;
       font-size: 38px;
     }
-  
+
     label {
       font-size: 10px;
       letter-spacing: 1px;
@@ -349,7 +349,7 @@ Buttons
       display: block;
       margin-bottom: 3px;
     }
-  
+
     .card-holder,
     .card-expiration-date {
       position: absolute;
@@ -359,13 +359,13 @@ Buttons
       font-size: 22px;
       text-transform: capitalize;
     }
-  
+
     .card-expiration-date {
       text-align: right;
       left: auto;
       right: 20px;
     }
-  
+
     .ccv {
       height: 36px;
       background: #fff;
@@ -379,18 +379,18 @@ Buttons
       color: #000;
       text-align: right;
       padding: 10px;
-  
+
       label {
         margin: -25px 0 14px;
         color: #fff;
       }
     }
-  
-  
+
+
   }
-  
-  
-  
+
+
+
 
 
 .navbar-nav > li{
@@ -404,7 +404,7 @@ body{
     font-family: 'Open Sans', sans-serif !important;
     color: $font-col;
 
-} 
+}
 
 .logo1{
     color: $violet-fonce;
@@ -412,6 +412,8 @@ body{
     border:none;
     height: inherit;
     margin-left:20px;
+    height: 120px;
+    width: 100px;
 }
 
 .to-violet{
@@ -431,7 +433,7 @@ body{
    // background-color: $elt-col;
    background-color: $elt-col;
    padding-top: 20px;
-   
+
 }
 
 .user-avatar{
@@ -449,7 +451,7 @@ body{
     color: black;
     font-size: 20px;
     font-weight: 700;
-}  
+}
 .cat-info{
     border-bottom: 3px solid $border-col;
     padding-bottom: 20px;
@@ -495,7 +497,7 @@ body{
 }
 
 .nav-menu-item{
-   
+
     width: 100%;
     height: 50px;
     line-height: 50px;
@@ -507,17 +509,17 @@ body{
     color: black;
     font-size: 15px;
     padding-left:25px;
-  
+
       span {
         position: absolute;
       }
-  
+
     &.highlight {
       border-left: 7px solid $violet-fonce !important;
       background-color: $violet-clair;
       padding-left: 18px;
     }
-  
+
   }
 
 .title{
@@ -530,7 +532,7 @@ body{
  margin-bottom: 20px;
  padding: 20px 60px 20px 30px;
  box-shadow: 3px 3px 6px #aaa;
-    
+
 
 }
 
@@ -551,7 +553,7 @@ body{
 
 .fiche-vendeur{
     padding-top: 20px;
-}   
+}
 
 .vendor-name{
     text-align:center;
@@ -622,7 +624,7 @@ body{
     border-bottom: 1px solid $violet-fonce;
     margin: 8px;
 
-    
+
 }
 
 .paiement{
